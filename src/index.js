@@ -33,7 +33,7 @@ window.onload = () => {
     if (timeLeft) {
       timeInterval = setInterval(tick, 1000);
     } else {
-      const currentTime = Date.parse(new Date());
+      const currentTime = Date.parse(new Date()); //  Date.parse переводит время в милисекунды
       deadLine = new Date(currentTime + timerMinutes * 60 * 1000);
       timeInterval = setInterval(tick, 1000);
     }
@@ -60,7 +60,7 @@ window.onload = () => {
     if (!paused) {
       paused = true;
       clearInterval(timeInterval);
-      timeLeft = timeRemaining(deadLine).diff;
+      timeLeft = timeRemaining(deadLine).diff; // Показывает остаток времени
     }
   };
 
